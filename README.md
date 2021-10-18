@@ -10,6 +10,8 @@
 6. Compile the stm firmware and upload the stm firmware to your crazyflie
 7. Connect a cable according to the picture bellow to your crazyflie:
 
+![2e610349-ad5a-4518-bc3a-d8b367f3c0c3 sketchpad](https://user-images.githubusercontent.com/32649570/137742891-7aff069d-f8cc-4a74-a0d0-b31d228c3c8d.png)
+
 ## How to test 
 1. make sure to have [cflib installed](https://github.com/bitcraze/crazyflie-lib-python/blob/master/docs/installation/install.md)
 2. run `python3 send_emergency_land.py <your_crazyflie_radio_uri>`
