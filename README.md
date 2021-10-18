@@ -10,7 +10,7 @@
 6. Compile the stm firmware and upload the stm firmware to your crazyflie
 7. Connect a cable according to the picture bellow to your crazyflie:
 
-IMPORTANT: Make sure to add the 5kΩ resistor between the ground and the two cables, otherwise it might burn the drone.
+IMPORTANT: Make sure to add the 5kΩ resistor between the ground and the two cables, without the resistor the GND could damage the drone.
 
 ![2e610349-ad5a-4518-bc3a-d8b367f3c0c3 sketchpad](https://user-images.githubusercontent.com/32649570/137743141-7023c0a7-36a4-4f78-a0c2-aa69b199ec89.png)
 
