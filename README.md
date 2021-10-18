@@ -2,7 +2,7 @@
 
 ## How to add emergency land to your crazyflie
 
-1. Upload the nrf [.bin firmware file](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/da50aae5750fa001568360d4338a2dd59cbd8c20/crazyflie2_nrf_emergency_land.bin) in this repo to the crazyflie nrf
+1. Upload the nrf [.bin firmware file](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/da50aae5750fa001568360d4338a2dd59cbd8c20/crazyflie2_nrf_emergency_land.bin) in this repo to the crazyflie nrf. The source code for the binary file could be found [here](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land)
 2. Add  `emergency_land.c` to `/src/deck/drivers/src/` stm firmware directory
 3. Add `emergency_land.h` to `/src/deck/drivers/interface/` stm firmware  directory
 4. Add `PROJ_OBJ += emergency_land.o` to your makefile of your stm firmware 
