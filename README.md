@@ -22,6 +22,6 @@ Replace the line [here](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/3
 ## Additional material
 
 * The repo which I used to develop the firmware code could be found [here](https://github.com/M-R-VulcaN/crazyflie-firmware-emergency-land/)
-** Also is useful the [pull request](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land/pull/1/files) in which all the changes I've made for the emergency land stm firmware code
+  * Also is useful the [pull request](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land/pull/1/files) in which all the changes I've made for the emergency land stm firmware code
 * The source code for the nrf firmware could be found [here](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land) 
-**  Also is useful the [pull request](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land/pull/1/files) in which all the changes I've made for the emergency land nrf firmware code
+  *  Also is useful the [pull request](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land/pull/1/files) in which all the changes I've made for the emergency land nrf firmware code
