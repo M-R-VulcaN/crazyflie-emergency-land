@@ -10,7 +10,12 @@
 6. Compile the stm firmware and upload the stm firmware to your crazyflie
 7. Connect a cable according to the picture bellow to your crazyflie:
 
+IMPORTANT: Make sure to add the 5kΩ resistor between the ground and the two cables, otherwise it might burn the drone.
+
 ![2e610349-ad5a-4518-bc3a-d8b367f3c0c3 sketchpad](https://user-images.githubusercontent.com/32649570/137743141-7023c0a7-36a4-4f78-a0c2-aa69b199ec89.png)
+
+Please note: In the image above the WKUP pin and the N_IO_1 pin are swapped for some reason, the lines I drew are the correct way for connecting the cables to the drone however. 
+
 
 ## How to test 
 1. make sure to have [cflib installed](https://github.com/bitcraze/crazyflie-lib-python/blob/master/docs/installation/install.md)
