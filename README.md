@@ -10,7 +10,7 @@
 6. Compile the stm firmware and upload the stm firmware to your crazyflie
 7. Connect a cable according to the picture bellow to your crazyflie:
 
-![2e610349-ad5a-4518-bc3a-d8b367f3c0c3 sketchpad](https://user-images.githubusercontent.com/32649570/137742891-7aff069d-f8cc-4a74-a0d0-b31d228c3c8d.png)
+![2e610349-ad5a-4518-bc3a-d8b367f3c0c3 sketchpad](https://user-images.githubusercontent.com/32649570/137743141-7023c0a7-36a4-4f78-a0c2-aa69b199ec89.png)
 
 ## How to test 
 1. make sure to have [cflib installed](https://github.com/bitcraze/crazyflie-lib-python/blob/master/docs/installation/install.md)
