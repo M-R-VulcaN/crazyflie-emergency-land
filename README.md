@@ -15,4 +15,4 @@
 2. run `python3 send_emergency_land.py <your_crazyflie_radio_uri>`
 
 ## How to develop
-Add your emergency land code in this line [here](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/30e61b90e58d7636af3be6a932981955d58d3d73/emergency_land.c#L48)
+Replace the line [here](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/30e61b90e58d7636af3be6a932981955d58d3d73/emergency_land.c#L48) with your emergency land code
