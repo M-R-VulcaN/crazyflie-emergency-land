@@ -1,8 +1,8 @@
-# zvuv-emergency-land
+# Crazyflie Emergency Land
 
 ## How to add emergency land to your crazyflie
 
-1. Upload the nrf [.bin firmware file](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/da50aae5750fa001568360d4338a2dd59cbd8c20/crazyflie2_nrf_emergency_land.bin) in this repo to the crazyflie nrf. The source code for the binary file could be found [here](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land)
+1. Upload the nrf [.bin firmware file](https://github.com/M-R-VulcaN/crazyflie-emergency-land/blob/da50aae5750fa001568360d4338a2dd59cbd8c20/crazyflie2_nrf_emergency_land.bin) in this repo to the crazyflie nrf. The source code for the binary file could be found [here](https://github.com/M-R-VulcaN/crazyflie2-nrf-firmware-emergency-land)
 2. Add  `emergency_land.c` to `/src/deck/drivers/src/` stm firmware directory
 3. Add `emergency_land.h` to `/src/deck/drivers/interface/` stm firmware  directory
 4. Add `PROJ_OBJ += emergency_land.o` to your makefile of your stm firmware 
@@ -22,7 +22,7 @@ Please note: In the image above the WKUP pin and the N_IO_1 pin are swapped for 
 2. run `python3 send_emergency_land.py <your_crazyflie_radio_uri>`
 
 ## How to develop
-Replace the line [here](https://github.com/M-R-VulcaN/zvuv-emergency-land/blob/30e61b90e58d7636af3be6a932981955d58d3d73/emergency_land.c#L48) with your emergency land code
+Replace the line [here](https://github.com/M-R-VulcaN/crazyflie-emergency-land/blob/30e61b90e58d7636af3be6a932981955d58d3d73/emergency_land.c#L48) with your emergency land code
 
 ## Additional material
 
