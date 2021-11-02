@@ -18,13 +18,13 @@ def print_link_quality(link_quality):
 def print_error(error_msg):
     print("error msg:",error_msg)
 
-def main():
-    if len(sys.argv) == 1:
-        print('you must give the uri of the crazyflie as an argument')
-        return
+def main(uri):
+    #if len(sys.argv) == 1:
+    #    print('you must give the uri of the crazyflie as an argument')
+    #    return
     
-    link = crtp.get_link_driver(sys.argv[CF_URI_INDEX])
-
+    #link = crtp.get_link_driver(sys.argv[CF_URI_INDEX])
+    link = crtp.get_link_driver(uri)
     assert link is not None
     
     pk = CRTPPacket(0xFF, [0x03, 0x04, 0,0,0,0,0,0,0])
