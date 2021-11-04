@@ -28,7 +28,11 @@ def main(uri):
     assert link is not None
     
     pk = CRTPPacket(0xFF, [0x03, 0x04, 0,0,0,0,0,0,0])
-    
+    ##packet = [0xf3, 0xfe, cmd]
+    #class PowerSwitch:
+    # BOOTLOADER_CMD_ALLOFF = 0x01
+    # BOOTLOADER_CMD_SYSOFF = 0x02
+    # BOOTLOADER_CMD_SYSON = 0x03
     link.send_packet(pk)
     print("emergency land command sent")
     pk_recv = link.receive_packet(0.1)
