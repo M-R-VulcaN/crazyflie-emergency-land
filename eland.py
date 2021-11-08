@@ -29,7 +29,6 @@ def button_press(action):
             uri_num = MAX_RANGE
         text.value = "radio://0/" + str(uri_num) + "/2M"
         text.size = 32
-
     else:
         pass
 
