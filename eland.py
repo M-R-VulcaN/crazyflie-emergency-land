@@ -29,11 +29,13 @@ def button_press(action):
             uri_num = MAX_RANGE
         text.value = "radio://0/" + str(uri_num) + "/2M"
         text.size = 32
+
     else:
         pass
 
 def activate_eland(uri):
     #uri = "radio://0/80/2M"  ##CHANGE THIS
+    
     print("e-land is active! press the e-land button.\nuri: " + str(uri))
     global stop_eland
     while(True):
