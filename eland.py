@@ -11,7 +11,8 @@ MIN_RANGE = 20
 MAX_RANGE = 30
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(ELAND_PIN, GPIO.IN)
+# GPIO.setup(ELAND_PIN, GPIO.IN)
+GPIO.setup(ELAND_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 eland_activated = False
 stop_eland = False
@@ -27,11 +28,12 @@ def button_press(action):
         if uri_num > MAX_RANGE:
             uri_num = MAX_RANGE
         text.value = "radio://0/" + str(uri_num) + "/2M"
+        text.size = 32
     else:
         pass
 
 def activate_eland(uri):
-    uri = "radio://0/80/2M"  ##CHANGE THIS
+    #uri = "radio://0/80/2M"  ##CHANGE THIS
     print("e-land is active! press the e-land button.\nuri: " + str(uri))
     global stop_eland
     while(True):
@@ -62,13 +64,16 @@ def set_uri():
 
     if(eland_activated):
         set_text.value = "ON"
-        eland_text.value = "e-land Activated"
+        set_text.text_color = "#66FF00"
+        eland_text.value = "Activated"
+        eland_text.text_color = "#66FF00"
 
-        # t = threading.Thread(target=activate_eland, args=(uri, ))
         t.start()
     else:
         set_text.value = "OFF"
-        eland_text.value = "e-land Disactivated"
+        set_text.text_color = "#FF160C"
+        eland_text.value = "Disactivated"
+        eland_text.text_color = "#FF160C"
 
         global stop_eland
         stop_eland = True
@@ -81,19 +86,28 @@ def set_uri():
 
 
 # Set up the app
-app = App(title="emergency landing pi")
+app = App(title="emergency landing pi", bg = "black")
 app.set_full_screen()
 
 uri_num = MIN_RANGE
 
-text = Text(app, text="set uri", size=32, font="Times New Roman", color="black")
+text = Text(app, text="Press SET to Activate", size=26, font="Times New Roman", color="white")
 
 button = PushButton(app, lambda: button_press(1), text="Plus", align ="right", width = 10, height = 3)
+button.bg = "white"
+
 button = PushButton(app, lambda: button_press(-1), text="Minus", align ="left", width = 10, height = 3)
+button.bg = "white"
 
 set_text = Text(app, text="", size=32, font="Times New Roman", color="red")
-eland_text = Text(app, text="", size=8, font="Times New Roman", color="black")
+set_text.focus()
+
+eland_text = Text(app, text="", size=16, font="Times New Roman", color="white")
+eland_text.value = "Disactivated"
+eland_text.focus()
+eland_text.text_color = "#FF160C"
 
 button = PushButton(app, lambda: set_uri(), text="Set", align ="bottom", width = 10, height = 3)
+button.bg = "white"
 
 app.display()
