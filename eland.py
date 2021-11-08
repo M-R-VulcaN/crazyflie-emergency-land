@@ -27,14 +27,15 @@ def button_press(action):
             uri_num = MIN_RANGE
         if uri_num > MAX_RANGE:
             uri_num = MAX_RANGE
-        text.value = "radio://0/" + str(uri_num) + "/2M"
+        text.value = "radio://0/2M/"+str(uri_num)
+        # drone_uri = "radio://0/120/E7E7E7E7"+str(uri_num)+"/2M"
         text.size = 32
     else:
         pass
 
 def activate_eland(uri):
-    #uri = "radio://0/80/2M"  ##CHANGE THIS
-    
+    ## uri = "radio://0/80/2M"  ##CHANGE THIS
+    ## "radio://0/120/E7E7E7E7"+str(uri_num)+"/2M"
     print("e-land is active! press the e-land button.\nuri: " + str(uri))
     global stop_eland
     while(True):
@@ -59,7 +60,9 @@ def set_uri():
     print(eland_activated)
 
     global uri_num
-    uri = str(text.value)
+
+    # uri = str(text.value)
+    uri = "radio://0/120/2M/E7E7E7E7"+str(uri_num)
 
     t = threading.Thread(target=activate_eland, args=(uri, ))
 
@@ -91,6 +94,7 @@ app = App(title="emergency landing pi", bg = "black")
 app.set_full_screen()
 
 uri_num = MIN_RANGE
+drone_uri = 0
 
 text = Text(app, text="Press SET to Activate", size=26, font="Times New Roman", color="white")
 
