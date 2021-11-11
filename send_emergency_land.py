@@ -25,7 +25,11 @@ def main(uri):
     
     #link = crtp.get_link_driver(sys.argv[CF_URI_INDEX])
     link = crtp.get_link_driver(uri)
-    assert link is not None
+    if(link is None):
+        print(link)
+        print("link is None")
+        link.close()
+        return 0
     
     # pk = CRTPPacket(0xFF, [0x03, 0x04, 0,0,0,0,0,0,0])  # packey for e-land
 
@@ -43,7 +47,11 @@ def main(uri):
     print("Restart command sent!\nPower OFF")
     pk_recv = link.receive_packet(0.1)
 
-    assert pk_recv is not None
+    if(pk_recv is None):
+        print(pk_recv)
+        print("pk_recv is None")
+        link.close()
+        return 0
 
     link.close()
 
@@ -62,6 +70,7 @@ def main(uri):
     assert pk_recv is not None
 
     link.close()
+    return 1
 
 
 
