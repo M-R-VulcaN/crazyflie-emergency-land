@@ -27,7 +27,7 @@ def button_press(action):
             uri_num = MIN_RANGE
         if uri_num > MAX_RANGE:
             uri_num = MAX_RANGE
-        text.value = "radio://0/2M/"+str(uri_num)
+        text.value = "radio://0/"+str(uri_num)+"/2M"
         # drone_uri = "radio://0/120/E7E7E7E7"+str(uri_num)+"/2M"
         text.size = 32
     else:
@@ -37,6 +37,7 @@ def activate_eland(uri):
     ## uri = "radio://0/80/2M"  ##CHANGE THIS
     ## "radio://0/120/E7E7E7E7"+str(uri_num)+"/2M"
     print("e-land is active! press the e-land button.\nuri: " + str(uri))
+    print("Activated!")
     global stop_eland
     while(True):
         if stop_eland:
@@ -44,12 +45,17 @@ def activate_eland(uri):
             stop_eland = False
             break
 
-        time.sleep(0.2)
         if(GPIO.input(ELAND_PIN)==GPIO.LOW):
+            # try:
             print("activated emergency landing!")
+            text.value = "Activated!"
             print(uri)
-            send_emergency_land.main(str(uri))
-            time.sleep(2)
+            if (not send_emergency_land.main(str(uri))):
+                print("wrong uri")
+                text.value = "URI not found"
+
+            time.sleep(1.5)
+            text.value = "radio://0/"+str(uri_num)+"/2M"
         else:
             pass
             # print("...")
@@ -60,7 +66,7 @@ def set_uri():
     print(eland_activated)
 
     global uri_num
-
+    global stop_eland
     # uri = str(text.value)
     uri = "radio://0/120/2M/E7E7E7E7"+str(uri_num)
 
@@ -79,7 +85,6 @@ def set_uri():
         eland_text.value = "Disactivated"
         eland_text.text_color = "#FF160C"
 
-        global stop_eland
         stop_eland = True
         try:
             t.join()
@@ -96,7 +101,7 @@ app.set_full_screen()
 uri_num = MIN_RANGE
 drone_uri = 0
 
-text = Text(app, text="Press SET to Activate", size=26, font="Times New Roman", color="white")
+text = Text(app, text="radio://0/"+str(uri_num)+"/2M", size=26, font="Times New Roman", color="white")
 
 button = PushButton(app, lambda: button_press(1), text="Plus", align ="right", width = 10, height = 3)
 button.bg = "white"
