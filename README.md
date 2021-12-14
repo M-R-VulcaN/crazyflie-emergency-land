@@ -12,7 +12,7 @@
 
 IMPORTANT: Make sure to add the 5kΩ resistor between the ground and the two cables, without the resistor the GND could damage the drone.
 
-![2e610349-ad5a-4518-bc3a-d8b367f3c0c3 sketchpad](https://user-images.githubusercontent.com/32649570/137743141-7023c0a7-36a4-4f78-a0c2-aa69b199ec89.png)
+![cf2.png](https://www.bitcraze.io/documentation/hardware/crazyflie_2_1/crazyflie_2_1-deck-connector-multiplex.png)
 
 Please note: In the image above the WKUP pin and the N_IO_1 pin are swapped for some reason, the lines I drew are the correct way for connecting the cables to the drone however. 
 
